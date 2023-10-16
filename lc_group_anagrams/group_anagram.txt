@@ -1,0 +1,26 @@
+Intuition::
+My initial thoughts were to use a hashmap. So what should be the key that groups all the anagram values. 
+I begin with summing the ASCII values. That solution wasn't full proof because different arrangement of letters can still sum to the same ASCII value. 
+So I had to switch up the approach.
+
+Approach::
+1st: create a hashmap (named mine: "groupAnagrams_map) with a default value of a list. So you don't have to cover that edge case
+
+2nd: we need a way to access each string in the input list "strs". I used a for loop.
+
+3rd: we need a way to track the individual letters of each string to use as a unique key to group common anagrams. 
+I created a list under the first for loop (named mine: alaphabet_count) and initialized it with 26 zeros.
+
+4th: now we need a way to access each individual letter. I created a 2nd for loop. In this loop I incremented the array in a way that match with the letters in the English alaphabet. 
+Using the letter's ASCII value - the ASCII value of "a" you can map each letter to their respective index in the array.
+
+5th: append string to their respected key in the dictionary. First be sure to change list to tuple.
+
+6th: return result.
+
+Complexity::
+Time complexity:
+O(mn26) = O(m*n): m = individual strings, n = individual letters, 26 = constant, alphabet
+
+Space complexity:
+O(n) created a hashmap
