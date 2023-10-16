@@ -1,0 +1,22 @@
+Intuition::
+Clever question! It took me some time to create intuition for this problem. 
+Data structure that could hold “keys” which would be the frequency count of the elements and can have lists as values in case I had elements with the same frequency count. 
+I remembered back in my DSA class that we learned Bucket Sort so I figure we could play around with that idea.
+
+Approach::
+1st: create a hashmap to count the frequency each element appears in the input array and a frequency array to sort elements in the input array depending on their frequency. 
+The length of the frequency array is bounded to the length + 1 the input array. This is a good approach because the max a number can repeat itself is by the length of the array. 
+(I technically could have gotten away with just using a hashmap but this implementation is cleaner and results in a similar time complexity)
+
+2nd: go through input array and construct dictionary
+
+3rd: go through the dictionary and we are going to use the values of our dictionary as the indices to our frequency array. Because this is a 2D array this will allow us to organize elements in the dictionary with the same frequency count together
+
+4th: finally we go through the frequency array in reverse order. This will ensure we get the highest frequency elements first and by using the if statement at the end we can short circuit the search once we find out kth element.
+
+Complexity::
+Time complexity:
+O(n)
+
+Space complexity:
+O(n) + O(n) = O(n)
